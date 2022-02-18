@@ -11,6 +11,7 @@ specifiers:
   pinia: ^2.0.11
   pinia-plugin-persist: ^0.0.93
   sass: ^1.49.7
+  vfonts: ^0.0.3
   vite: ^2.8.0
   vite-plugin-compression: ^0.5.1
   vue: ^3.2.25
@@ -24,6 +25,7 @@ dependencies:
   nprogress: 0.2.0
   pinia: 2.0.11_vue@3.2.31
   pinia-plugin-persist: 0.0.93_vue@3.2.31
+  vfonts: 0.0.3
   vue: 3.2.31
   vue-i18n: 9.2.0-beta.30_vue@3.2.31
   vue-router: 4.0.12_vue@3.2.31

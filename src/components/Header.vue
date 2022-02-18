@@ -1,9 +1,14 @@
 <script setup>
+import { ref, onMounted, h } from 'vue'
 import { PhoneFilled, Email, LocationFilled } from '@vicons/carbon'
 import { Icon } from '@vicons/utils'
 import { useMainStore } from '@/stores/main'
-import { useI18n } from 'vue-i18n'
-const { t } = useI18n()
+// import { useI18n } from 'vue-i18n'
+// const { t } = useI18n()
+
+onMounted(() => {
+  handleImgSrc()
+})
 
 const store = useMainStore()
 // 切换国家语言
@@ -14,12 +19,110 @@ function onChangeLang(lang) {
   window.location.reload()
 }
 
-// 你可以直接使用渲染为 SVG 的组件
-// 或者把它包裹在 @vicons/utils 提供的 Icon 组件中
+// 图片路径
+const logoImg = ref('')
+const handleImgSrc = async () => {
+  let m = await import('@/assets/images/newlogo.png')
+  logoImg.value = m.default
+}
+
+// nav
+import { RouterLink } from 'vue-router'
+const activeKey = ref(null)
+const menuOptions = [
+  {
+    label: () =>
+      h(
+        RouterLink,
+        {
+          to: {
+            name: 'index'
+          }
+        },
+        { default: () => '首页' }
+      ),
+    key: 'home'
+  },
+
+  {
+    label: '个人金融',
+    key: 'ge',
+    children: [
+      {
+        label: () => h(RouterLink, { to: { name: 'index' } }, { default: () => '账户种类' }),
+        key: 'ge1'
+      },
+      {
+        label: () => h(RouterLink, { to: { name: 'index' } }, { default: () => '个人开户条件' }),
+        key: 'ge2'
+      },
+      {
+        label: () => h(RouterLink, { to: { name: 'index' } }, { default: () => '个人产品与服务' }),
+        key: 'ge3'
+      }
+    ]
+  },
+
+  {
+    label: '公司金融',
+    key: 'gong',
+    children: [
+      {
+        label: () => h(RouterLink, { to: { name: 'index' } }, { default: () => '账户种类' }),
+        key: 'gong1'
+      },
+      {
+        label: () => h(RouterLink, { to: { name: 'index' } }, { default: () => '公司开户条件' }),
+        key: 'gong2'
+      },
+      {
+        label: () => h(RouterLink, { to: { name: 'index' } }, { default: () => '公司产品与服务' }),
+        key: 'gong3'
+      }
+    ]
+  },
+
+  {
+    label: () =>
+      h(
+        RouterLink,
+        {
+          to: {
+            name: 'index'
+          }
+        },
+        { default: () => '新闻动态' }
+      ),
+    key: 'new'
+  },
+
+  {
+    label: '关于我们',
+    key: 'about',
+    children: [
+      {
+        label: () => h(RouterLink, { to: { name: 'index' } }, { default: () => '丝路银行简介' }),
+        key: 'about1'
+      },
+      {
+        label: () => h(RouterLink, { to: { name: 'index' } }, { default: () => '大事记' }),
+        key: 'about2'
+      },
+      {
+        label: () => h(RouterLink, { to: { name: 'index' } }, { default: () => '投资者关系' }),
+        key: 'about3'
+      },
+      {
+        label: () => h(RouterLink, { to: { name: 'index' } }, { default: () => '联系我们' }),
+        key: 'about4'
+      }
+    ]
+  }
+]
 </script>
 
 <template>
-  <div class="lang-contact">
+  <div class="top-bar">
     <div class="flex-box max-width">
       <div class="lang">
         <span @click="onChangeLang('zh-CN')">中文</span>
@@ -29,57 +132,76 @@ function onChangeLang(lang) {
       <div class="contact">
         <span>
           <Icon :size="16"> <PhoneFilled /> </Icon>
-          <label> {{ t('header.phone') }}</label>
+          <label>(+253)2134 1266</label>
         </span>
         <span>
           <Icon :size="16"> <Email /> </Icon>
-          <label>{{ t('header.email') }}</label>
+          <label>info@silkroadibank.com</label>
         </span>
         <span>
           <Icon :size="16"> <LocationFilled /> </Icon>
-          <label>{{ t('header.locationFilled') }}</label>
+          <label>Haramous 1 Lot No.2, Djibouti, BP 1877</label>
         </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="logo-nav">
+    <div class="flex-box max-width">
+      <div class="logo">
+        <img :src="logoImg" width="200" />
+      </div>
+      <div class="nav">
+        <n-menu v-model:value="activeKey" mode="horizontal" :options="menuOptions" />
       </div>
     </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
-.lang-contact {
+.top-bar {
   width: 100%;
   height: 40px;
   background-color: rgba(0, 188, 150, 0.9);
-  .flex-box {
-    height: 100%;
-    text-align: center;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 auto;
-    color: white;
-    font-size: 12px;
-    .lang {
-      span {
-        padding: 0 10px;
-        margin-right: 10px;
-        cursor: pointer;
-        &:hover {
-          text-decoration: underline;
-        }
+}
+
+.logo-nav {
+  width: 100%;
+  height: 80px;
+  background-color: white;
+  box-shadow: 0 1px 5px rgba(204, 204, 204, 0.5);
+}
+
+.flex-box {
+  height: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  color: white;
+  font-size: 12px;
+  .lang {
+    span {
+      padding: 0 10px;
+      margin-right: 10px;
+      cursor: pointer;
+      &:hover {
+        text-decoration: underline;
       }
     }
-    .contact {
-      flex: 1;
+  }
+  .contact {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    span {
+      margin-left: 10px;
       display: flex;
       justify-content: flex-end;
-      span {
-        margin-left: 10px;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        label {
-          margin-left: 8px;
-        }
+      align-items: center;
+      label {
+        margin-left: 8px;
       }
     }
   }

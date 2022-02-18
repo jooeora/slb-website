@@ -4,6 +4,7 @@ import router from './router/index'
 import store from './stores/index'
 import i18n from './language'
 import App from './App.vue'
+import { naive } from '@/utils/naive'
 
 const app = createApp(App)
 
@@ -11,5 +12,6 @@ app.use(VueWechatTitle)
 app.use(router)
 app.use(store)
 app.use(i18n)
+app.use(naive)
 
 app.mount('#app')

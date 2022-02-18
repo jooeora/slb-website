@@ -1,16 +1,17 @@
 <script setup>
+// 通用字体
+import 'vfonts/Lato.css'
+// 等宽字体
+import 'vfonts/FiraCode.css'
 import Head from './components/Header.vue'
+import Footer from './components/Footer.vue'
 </script>
 <template>
   <Head></Head>
-  <router-view id="app" v-wechat-title="$route.meta.title"></router-view>
+  <router-view> </router-view>
+  <Footer></Footer>
 </template>
 
-<style>
+<style lang="scss">
 @import '@/assets/style/main.scss';
-#app {
-  width: 100vw;
-  height: 100vh;
-  overflow: auto;
-}
 </style>

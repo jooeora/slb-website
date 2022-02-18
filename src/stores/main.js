@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { getStorage, setStorage, getBrowserLang } from '@/util'
+import { getStorage, setStorage, getBrowserLang } from '@/utils/index'
 
 export const useMainStore = defineStore({
   id: 'main', // id必填，且需要唯一

@@ -10,6 +10,14 @@ const routes = [
       title: '首页'
     }
   }
+  // {
+  //   path: '/aa',
+  //   name: 'aa',
+  //   component: () => import('../views/Index copy.vue'),
+  //   meta: {
+  //     title: '首页'
+  //   }
+  // }
 ]
 const router = createRouter({
   history: createWebHistory(),

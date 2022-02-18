@@ -1,6 +1,6 @@
 import { createI18n } from 'vue-i18n' //引入vue-i18n组件
 
-import { getStorage, getBrowserLang } from '@/util'
+import { getStorage, getBrowserLang } from '@/utils/index'
 //引入同级目录下文件
 const modules = import.meta.globEager('./*')
 
