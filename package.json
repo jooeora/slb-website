@@ -1,0 +1,30 @@
+{
+  "name": "slb-website",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "axios": "^0.26.0",
+    "naive-ui": "^2.25.2",
+    "nprogress": "^0.2.0",
+    "pinia": "^2.0.11",
+    "pinia-plugin-persist": "^0.0.93",
+    "vue": "^3.2.25",
+    "vue-i18n": "^9.2.0-beta.30",
+    "vue-router": "4",
+    "vue-wechat-title": "^2.0.7"
+  },
+  "devDependencies": {
+    "@vicons/carbon": "^0.12.0",
+    "@vicons/utils": "^0.1.4",
+    "@vitejs/plugin-vue": "^2.2.0",
+    "dart-sass": "^1.25.0",
+    "sass": "^1.49.7",
+    "vite": "^2.8.0",
+    "vite-plugin-compression": "^0.5.1"
+  }
+}
