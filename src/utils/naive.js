@@ -4,19 +4,13 @@ import {
   // component
   NButton,
   NImage,
-  NImageGroup,
   NSpace,
   NDropdown,
   NIcon,
-  NMenu
+  NMenu,
+  NCarousel
 } from 'naive-ui'
 
 export const naive = create({
-  components: [NButton],
-  components: [NImage],
-  components: [NImageGroup],
-  components: [NSpace],
-  components: [NDropdown],
-  components: [NIcon],
-  components: [NMenu]
+  components: [NButton, NImage, NSpace, NDropdown, NIcon, NMenu, NCarousel]
 })

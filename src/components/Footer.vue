@@ -67,8 +67,9 @@ footer {
   align-items: flex-start;
   color: white;
   .max-width {
+    width: 100%;
     padding: 10px;
-    margin-bottom: 10px;
+    margin: 0 auto;
     .title {
       font-size: 18px;
       margin-bottom: 10px;

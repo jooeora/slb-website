@@ -8,10 +8,10 @@ import { naive } from '@/utils/naive'
 
 const app = createApp(App)
 
+app.use(naive)
 app.use(VueWechatTitle)
 app.use(router)
 app.use(store)
 app.use(i18n)
-app.use(naive)
 
 app.mount('#app')
