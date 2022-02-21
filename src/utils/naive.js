@@ -8,9 +8,10 @@ import {
   NDropdown,
   NIcon,
   NMenu,
-  NCarousel
+  NCarousel,
+  NEllipsis
 } from 'naive-ui'
 
 export const naive = create({
-  components: [NButton, NImage, NSpace, NDropdown, NIcon, NMenu, NCarousel]
+  components: [NButton, NImage, NSpace, NDropdown, NIcon, NMenu, NCarousel, NEllipsis]
 })
