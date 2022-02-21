@@ -170,6 +170,9 @@ const menuOptions = [
   height: 80px;
   background-color: white;
   box-shadow: 0 1px 5px rgba(204, 204, 204, 0.5);
+  position: sticky;
+  top: 0;
+  z-index: 999;
 }
 
 .flex-box {
