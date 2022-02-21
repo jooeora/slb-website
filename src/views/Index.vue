@@ -1,6 +1,6 @@
 <script setup>
 import { ref, onMounted } from 'vue'
-import { Building } from '@vicons/carbon'
+import { Building, Person, PhoneIp } from '@vicons/carbon'
 onMounted(() => {
   handleImgSrc()
 })
@@ -27,14 +27,14 @@ const handleImgSrc = async () => {
       </div>
       <div>
         <n-icon size="64">
-          <Building />
+          <Person />
         </n-icon>
         <div class="title">个人产品与服务</div>
         <n-ellipsis style="max-width: 240px">公司产品与服务</n-ellipsis>
       </div>
       <div>
         <n-icon size="64">
-          <Building />
+          <PhoneIp />
         </n-icon>
         <div class="title">联系我们</div>
 
