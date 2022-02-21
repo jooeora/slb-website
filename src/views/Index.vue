@@ -15,12 +15,16 @@ const handleImgSrc = async () => {
   let d1 = await import('@/assets/images/SIB1024-2-700x400.jpg')
   let d2 = await import('@/assets/images/SIB04-700x400.jpg')
   let d3 = await import('@/assets/images/1b1r-623x356.jpeg')
+  let f1 = await import('@/assets/images/1.jpeg')
+  let f4 = await import('@/assets/images/4.jpeg')
 
   imgUrl.value = {
     banner1: m.default,
     d1: d1.default,
     d2: d2.default,
-    d3: d3.default
+    d3: d3.default,
+    f1: f1.default,
+    f4: f4.default
   }
 }
 </script>
@@ -58,8 +62,9 @@ const handleImgSrc = async () => {
         </n-ellipsis>
       </div>
     </div>
-    <!-- 简介 -->
+    <!-- 内容 -->
     <div class="max-width content">
+      <!-- 简介 -->
       <div class="description">
         <div class="des">
           <div class="title">丝路国际银行(Silkroad International Bank,简称SIB)</div>
@@ -86,6 +91,78 @@ const handleImgSrc = async () => {
             <img class="carousel-img" :src="imgUrl.d2" />
             <img class="carousel-img" :src="imgUrl.d3" />
           </n-carousel>
+        </div>
+      </div>
+    </div>
+    <!-- 个人金融 -->
+    <div class="max-width content">
+      <!-- 金融 -->
+      <div class="finance">
+        <div class="title">个人金融</div>
+        <div class="cont">
+          <div class="img">
+            <img :src="imgUrl.f4" alt="" srcset="" />
+          </div>
+          <div class="serve">
+            <div class="tit">个人产品与服务</div>
+            <ul>
+              <li>账户开立</li>
+              <li>个人支票</li>
+              <li>支付转账</li>
+              <li>国际汇款</li>
+              <li>货币兑换</li>
+            </ul>
+          </div>
+          <div class="quest">
+            <div class="tit">常见问题</div>
+            <ul>
+              <li>
+                <div>1. 能够开立什么币种账户？</div>
+                <div>答：吉郎和美元</div>
+              </li>
+              <li>
+                <div>2. 开户需要什么条件？</div>
+                <div>答：<span>个人开户条件</span></div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 公司金融 -->
+    <div class="max-width content">
+      <!-- 金融 -->
+      <div class="finance">
+        <div class="title">公司金融</div>
+        <div class="cont">
+          <div class="img">
+            <img :src="imgUrl.f1" alt="" srcset="" />
+          </div>
+          <div class="serve">
+            <div class="tit">公司产品与服务</div>
+            <ul>
+              <li>账户开立</li>
+              <li>公司支票</li>
+              <li>支付转账</li>
+              <li>国际汇款</li>
+              <li>货币兑换</li>
+              <li>信贷服务</li>
+              <li>保函与信用证</li>
+            </ul>
+          </div>
+          <div class="quest">
+            <div class="tit">常见问题</div>
+            <ul>
+              <li>
+                <div>1. 能够开立什么币种账户？</div>
+                <div>答：吉郎和美元</div>
+              </li>
+              <li>
+                <div>2. 开户需要什么条件？</div>
+                <div>答：<span>公司开户条件</span></div>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -177,6 +254,67 @@ const handleImgSrc = async () => {
           width: 100%;
           height: 240px;
           object-fit: cover;
+        }
+      }
+    }
+    .finance {
+      .title {
+        font-size: 18px;
+        font-weight: 700;
+        padding-bottom: 10px;
+        border-bottom: 1px solid rgba(102, 102, 102, 0.1);
+      }
+      .cont {
+        display: flex;
+        padding: 20px 0 0;
+        .img {
+          width: 280px;
+          img {
+            width: 100%;
+            object-fit: cover;
+          }
+        }
+        .serve {
+          flex: 1;
+          padding: 0 20px;
+          margin-left: 60px;
+          ul {
+            list-style: inside;
+            text-indent: 1em;
+            margin-top: 5px;
+            padding-top: 5px;
+            li {
+              padding: 2px 0;
+            }
+          }
+          .tit {
+            font-size: 16px;
+            font-weight: 700;
+          }
+        }
+        .quest {
+          flex: 1;
+          padding: 0 20px;
+          .tit {
+            font-size: 16px;
+            font-weight: 700;
+          }
+          ul {
+            list-style: none;
+            text-indent: 1em;
+            margin-top: 5px;
+            padding-top: 5px;
+            li {
+              div {
+                padding: 2px 0;
+                span {
+                  cursor: pointer;
+                  color: rgba(0, 188, 150, 0.9);
+                  text-decoration: underline;
+                }
+              }
+            }
+          }
         }
       }
     }
