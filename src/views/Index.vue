@@ -212,6 +212,7 @@ const handleImgSrc = async () => {
       }
     }
   }
+
   .content {
     width: 100%;
     margin: 0 auto;
@@ -310,7 +311,9 @@ const handleImgSrc = async () => {
                 span {
                   cursor: pointer;
                   color: rgba(0, 188, 150, 0.9);
-                  text-decoration: underline;
+                  &:hover {
+                    text-decoration: underline;
+                  }
                 }
               }
             }
