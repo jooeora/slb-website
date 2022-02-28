@@ -29,6 +29,7 @@ const handleImgSrc = async () => {
 // nav
 import { RouterLink } from 'vue-router'
 const activeKey = ref(null)
+
 const menuOptions = [
   {
     label: () =>
@@ -49,15 +50,15 @@ const menuOptions = [
     key: 'ge',
     children: [
       {
-        label: () => h(RouterLink, { to: { name: 'index' } }, { default: () => '账户种类' }),
+        label: () => h(RouterLink, { to: { name: 'accountType' } }, { default: () => '账户种类' }),
         key: 'ge1'
       },
       {
-        label: () => h(RouterLink, { to: { name: 'index' } }, { default: () => '个人开户条件' }),
+        label: () => h(RouterLink, { to: { name: 'opening' } }, { default: () => '个人开户条件' }),
         key: 'ge2'
       },
       {
-        label: () => h(RouterLink, { to: { name: 'index' } }, { default: () => '个人产品与服务' }),
+        label: () => h(RouterLink, { to: { name: 'server' } }, { default: () => '个人产品与服务' }),
         key: 'ge3'
       }
     ]
@@ -68,15 +69,18 @@ const menuOptions = [
     key: 'gong',
     children: [
       {
-        label: () => h(RouterLink, { to: { name: 'index' } }, { default: () => '账户种类' }),
+        label: () =>
+          h(RouterLink, { to: { name: 'accountTypeCom' } }, { default: () => '账户种类' }),
         key: 'gong1'
       },
       {
-        label: () => h(RouterLink, { to: { name: 'index' } }, { default: () => '公司开户条件' }),
+        label: () =>
+          h(RouterLink, { to: { name: 'openingCom' } }, { default: () => '公司开户条件' }),
         key: 'gong2'
       },
       {
-        label: () => h(RouterLink, { to: { name: 'index' } }, { default: () => '公司产品与服务' }),
+        label: () =>
+          h(RouterLink, { to: { name: 'serverCom' } }, { default: () => '公司产品与服务' }),
         key: 'gong3'
       }
     ]

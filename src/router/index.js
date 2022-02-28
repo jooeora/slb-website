@@ -28,8 +28,33 @@ const routes = [
   },
   {
     path: '/server',
-    name: 'openiserverng',
+    name: 'server',
     component: () => import('../views/Person/server.vue'),
+    meta: {
+      title: '个人金融-个人产品与服务'
+    }
+  },
+
+  {
+    path: '/accountTypeCom',
+    name: 'accountTypeCom',
+    component: () => import('../views/Company/accountType.vue'),
+    meta: {
+      title: '个人金融-账户种类'
+    }
+  },
+  {
+    path: '/openingCom',
+    name: 'openingCom',
+    component: () => import('../views/Company/opening.vue'),
+    meta: {
+      title: '个人金融-个人开户条件'
+    }
+  },
+  {
+    path: '/serverCom',
+    name: 'serverCom',
+    component: () => import('../views/Company/server.vue'),
     meta: {
       title: '个人金融-个人产品与服务'
     }
