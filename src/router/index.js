@@ -60,6 +60,46 @@ const routes = [
     }
   },
   {
+    path: '/intro',
+    name: 'intro',
+    component: () => import('../views/About/intro.vue'),
+    meta: {
+      title: '关于我们-丝路银行简介'
+    }
+  },
+  {
+    path: '/bigEvents',
+    name: 'bigEvents',
+    component: () => import('../views/About/bigEvents.vue'),
+    meta: {
+      title: '关于我们-大事记'
+    }
+  },
+  {
+    path: '/relation',
+    name: 'relation',
+    component: () => import('../views/About/relation.vue'),
+    meta: {
+      title: '关于我们-投资者关系'
+    }
+  },
+  {
+    path: '/contactus',
+    name: 'contactus',
+    component: () => import('../views/About/contactus.vue'),
+    meta: {
+      title: '关于我们-联系我们'
+    }
+  },
+  {
+    path: '/news',
+    name: 'news',
+    component: () => import('../views/News/index.vue'),
+    meta: {
+      title: '新闻动态'
+    }
+  },
+  {
     path: '/404',
     name: '404',
     component: () => import('../views/404.vue')

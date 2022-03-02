@@ -92,7 +92,7 @@ const menuOptions = [
         RouterLink,
         {
           to: {
-            name: 'index'
+            name: 'news'
           }
         },
         { default: () => '新闻动态' }
@@ -105,19 +105,19 @@ const menuOptions = [
     key: 'about',
     children: [
       {
-        label: () => h(RouterLink, { to: { name: 'index' } }, { default: () => '丝路银行简介' }),
+        label: () => h(RouterLink, { to: { name: 'intro' } }, { default: () => '丝路银行简介' }),
         key: 'about1'
       },
       {
-        label: () => h(RouterLink, { to: { name: 'index' } }, { default: () => '大事记' }),
+        label: () => h(RouterLink, { to: { name: 'bigEvents' } }, { default: () => '大事记' }),
         key: 'about2'
       },
       {
-        label: () => h(RouterLink, { to: { name: 'index' } }, { default: () => '投资者关系' }),
+        label: () => h(RouterLink, { to: { name: 'relation' } }, { default: () => '投资者关系' }),
         key: 'about3'
       },
       {
-        label: () => h(RouterLink, { to: { name: 'index' } }, { default: () => '联系我们' }),
+        label: () => h(RouterLink, { to: { name: 'contactus' } }, { default: () => '联系我们' }),
         key: 'about4'
       }
     ]
